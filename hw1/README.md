@@ -27,5 +27,5 @@ We need more things for the coordinator.
     - GetReport: get the signal from a worker that it has finished the assigned task, and mark corresponding task stored in the Coordinator class as finished. Reply to the worker on whether the task still belongs to it. 
   - ChangeStage function: When all the MAP or REDUCE tasks are done, we need to switch to the next stage. For MAP -> REDUCE, we need to put all reduce tasks into remaining tasks and available tasks. 
 
-**3. rpc.go: **
+**3. rpc.go:**
 Defines the structure of args and reply for rpc call functions.
