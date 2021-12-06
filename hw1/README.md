@@ -3,6 +3,7 @@ Assignment website: https://pdos.csail.mit.edu/6.824/labs/lab-mr.html
 ## Method
 Implementing a worker process that calls application Map and Reduce functions and handles reading and writing files, and a coordinator process that hands out tasks to workers and copes with failed workers.
 To-do:
+
 **1. worker.go:** 
 Implement the worker process. Need to write the main worker function and rpc calls. 
 The main worker function mainly consist of three parts:
@@ -11,6 +12,7 @@ The main worker function mainly consist of three parts:
   - Do the MAP or REDUCE according to the task assigned by the Coordinator (rpc reply)
   - Report to the Coordinator that the task is finished, and get a reply on whether the task still belongs to itself
     - The task might no longer belongs to itself if it haven't finished for 10 seconds (from the coordinator's point of view, that worker has gone offline)
+
 **2. coordinator.go:**
 We need more things for the coordinator. 
   - Coordinator class:
@@ -24,5 +26,6 @@ We need more things for the coordinator.
     - AssignTask: from all available tasks (in the channel), assign one to the worker who ask for a task. Record which worker this task belongs to.
     - GetReport: get the signal from a worker that it has finished the assigned task, and mark corresponding task stored in the Coordinator class as finished. Reply to the worker on whether the task still belongs to it. 
   - ChangeStage function: When all the MAP or REDUCE tasks are done, we need to switch to the next stage. For MAP -> REDUCE, we need to put all reduce tasks into remaining tasks and available tasks. 
+
 **3. rpc.go: **
 Defines the structure of args and reply for rpc call functions.
