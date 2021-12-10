@@ -1,6 +1,6 @@
-# HW1 - MapReduce
+# MIT 6.824 HWs
+## HW1 - MapReduce
 Assignment website: https://pdos.csail.mit.edu/6.824/labs/lab-mr.html
-## Method
 Implementing a worker process that calls application Map and Reduce functions and handles reading and writing files, and a coordinator process that hands out tasks to workers and copes with failed workers.
 To-do:
 
