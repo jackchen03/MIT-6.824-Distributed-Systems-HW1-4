@@ -4,6 +4,7 @@ Assignment website: https://pdos.csail.mit.edu/6.824/labs/lab-mr.html
 Implementing a worker process that calls application Map and Reduce functions and handles reading and writing files, and a coordinator process that hands out tasks to workers and copes with failed workers.
 
 **To-do:**
+
 **1. worker.go:** 
 Implement the worker process. Need to write the main worker function and rpc calls. 
 The main worker function mainly consist of three parts:
