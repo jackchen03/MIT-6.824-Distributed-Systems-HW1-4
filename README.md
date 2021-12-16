@@ -22,6 +22,7 @@ We need more things for the coordinator.
     - The number of map tasks and reduce tasks
     - A map (int for the keys) to store remaining tasks
     - A channel to store currently available tasks (available means not haven't finished and haven't been assigned to a worker)
+      
       (The advantage of using a channel is that it will block if it is empty, so if there are no available tasks, the worker will wait until it is non-empty and then gets the RPC reply)
     During the initialization, we put all MAP tasks into remainging tasks, and also put them all into available tasks.
   - Two functions that workers will call via RPC:
